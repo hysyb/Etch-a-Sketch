@@ -10,10 +10,24 @@
 <body>
     <h1>Etch-A-Sketch</h1>
     <div class = 'body'>
-         <div class = 'options'>
-            <input type="radio">
-         </div>
-        <div class = 'grid'></div>
+        <div class = 'options'>
+            
+            <label for= 'black'>
+                <input type="radio"  name = 'color' id = 'black' value = 'black'>
+            Black</label>
+            
+            <label for= 'RGB'>
+                <input type="radio"  name = 'color' id = 'RGB' value = 'RGB'>
+            RGB</label>
+            
+            <label for= 'white'>
+                <input type="radio"  name = 'color' id = 'white' value = 'white'>
+            Eraser</label>
+            
+        </div>
+        <div class = 'gridContainer'>
+            <div class = 'grid'></div>
+        </div>
     </div>
     
 </body>

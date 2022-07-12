@@ -1,7 +1,7 @@
 const container = document.querySelector('.grid');
 console.log(container);
 
-for (i=0; i<2500; i++){
+for (i=0; i<380; i++){
 const newDiv = document.createElement('div');
 newDiv.classList.add('glow');
 //newDiv.addEventListener('mouseDown', func)
@@ -15,10 +15,8 @@ const pixels = document.querySelectorAll('.glow');
 //    this.css("backgroundColor", "black")    }
 //)})
 for (i=0;i<pixels.length;i++){
-    pixels[i].addEventListener('mouseenter', event => {
-       console.log(this);
-       console.log(typeof(this));
-       event.target.setAttribute('class','black');
-        // this.classList.add('black');
-    })
+    pixels[i].addEventListener('mouseenter', changeColor)
+    }
+function changeColor(e){
+    e.target.style.backgroundColor = 'black'
 }
