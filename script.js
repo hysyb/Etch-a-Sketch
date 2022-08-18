@@ -1,9 +1,10 @@
+//default settings
 let colorChoice = 'black';
+document.getElementById('black').checked = true;
 
-
-const container = document.querySelector('.grid');
 //Builds grid and removes draggability
-for (i=0; i<380; i++){
+const container = document.querySelector('.grid');
+for (i=0; i<400; i++){
 const newDiv = document.createElement('div');
 newDiv.classList.add('glow');
 container.appendChild(newDiv);
@@ -26,14 +27,13 @@ function toggleMouseStateDown(){
  function toggleMouseStateUp(){
     mouseIsDown=false;
  }
-//Color Picker
 
+//Color Picker
 let radios = document.querySelectorAll('input[type="radio"]')
 let colorPicker = document.getElementById('rgb');
 colorPicker.addEventListener('input', function(){
     colorChoice = colorPicker.value;
     document.getElementById('rgbRadio').checked = true;
-
 });
 for(let i = 0; i < radios.length; i++){
 radios[i].onclick = function() {
@@ -46,6 +46,7 @@ radios[i].onclick = function() {
     }
 }
 }
+
 //Coloring
 for (i=0;i<pixels.length;i++){
     pixels[i].addEventListener('mouseover', changeColor);
