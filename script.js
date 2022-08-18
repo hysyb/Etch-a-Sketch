@@ -32,11 +32,18 @@ let radios = document.querySelectorAll('input[type="radio"]')
 let colorPicker = document.getElementById('rgb');
 colorPicker.addEventListener('input', function(){
     colorChoice = colorPicker.value;
+    document.getElementById('rgbRadio').checked = true;
 
 });
 for(let i = 0; i < radios.length; i++){
 radios[i].onclick = function() {
+    if(radios[i].id == 'rgbRadio'){
+        colorChoice = colorPicker.value;
+        console.log(colorPicker.value);
+    }
+    else {
     colorChoice = this.value;
+    }
 }
 }
 //Coloring
