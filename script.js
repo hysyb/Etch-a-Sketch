@@ -18,20 +18,22 @@ container.addEventListener('drop', (e) => {
 
 //Set a variable to watch mouse click position
 let mouseIsDown = false;
-document.body.addEventListener('mousedown', toggleMouseState);
-document.body.addEventListener('mouseup', toggleMouseState);
-function toggleMouseState(){
- if (mouseIsDown == true){
-    mouseIsDown=false;
-    console.log(mouseIsDown);
+document.body.addEventListener('mousedown', toggleMouseStateDown);
+document.body.addEventListener('mouseup', toggleMouseStateUp);
+function toggleMouseStateDown(){
+    mouseIsDown=true;
  }
-    else {
-        mouseIsDown=true;
-        console.log(mouseIsDown);
-    }
-}
+ function toggleMouseStateUp(){
+    mouseIsDown=false;
+ }
 //Color Picker
+
 let radios = document.querySelectorAll('input[type="radio"]')
+let colorPicker = document.getElementById('rgb');
+colorPicker.addEventListener('input', function(){
+    colorChoice = colorPicker.value;
+
+});
 for(let i = 0; i < radios.length; i++){
 radios[i].onclick = function() {
     colorChoice = this.value;
