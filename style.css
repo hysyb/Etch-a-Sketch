@@ -1,6 +1,6 @@
 .body {
     display: flex;
-    grid-template-columns: 1fr 5fr;
+
 }
 .grid {
     display: grid;
@@ -8,12 +8,10 @@
     grid-template-rows: repeat(20,1fr);
     height:500px;
     width: 500px;
+    border: 10px solid grey;
 }
 .glow {
-    background-color: aqua;
-    outline: 1px solid red;
-    
-    
+    background-color: white;
 }
 .glow:hover {
     background-color: black;
@@ -31,14 +29,11 @@ h1 {
     width: 150px;
     justify-content: center;
     align-items: center;
-
-    /*display: grid;
-    grid-template-columns: auto;*/
 }
 input {
     float : left;
 }
-* {
+outlines {
     outline: 1px solid red;
 }
 .gridContainer {
