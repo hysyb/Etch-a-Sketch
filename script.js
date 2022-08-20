@@ -55,7 +55,11 @@ for (i=0;i<pixels.length;i++){
         pixels[i].addEventListener('mousedown', changeColorClick);
         }    
 function changeColor(e){
-    if (mouseIsDown == true){
+    if (mouseIsDown == true && colorChoice == 'random'){
+        console.log(Math.floor(Math.random()*16777215).toString(16))
+        e.target.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    }
+    else if (mouseIsDown == true){
         e.target.style.backgroundColor = colorChoice;
     }
 }
