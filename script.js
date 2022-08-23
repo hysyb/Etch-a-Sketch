@@ -1,13 +1,15 @@
 //default settings
 let colorChoice = 'black';
 document.getElementById('black').checked = true;
+const DEFAULT_GRID_ROWS = 20;
 
 //Builds grid and removes draggability
 const container = document.querySelector('.grid');
-for (i=0; i<400; i++){
+for (i=0; i<DEFAULT_GRID_ROWS*DEFAULT_GRID_ROWS; i++){
 const newDiv = document.createElement('div');
 newDiv.classList.add('glow');
 container.appendChild(newDiv);
+container.style.cssText += 'grid-template-columns: repeat('+ DEFAULT_GRID_ROWS +',1fr);';
 }
 const pixels = document.querySelectorAll('.glow');
 container.addEventListener('dragstart', (e) => {
