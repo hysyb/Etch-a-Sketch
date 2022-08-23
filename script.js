@@ -71,10 +71,31 @@ radios[i].onclick = function() {
 //Range Slider
 let gridSizeSlider = document.getElementById('slider');
 let sliderValue = document.getElementById('sliderValue');
-sliderValue.textContent
+gridSizeSlider.value = '3';
+sliderValue.textContent = 'Grid Size = '+DEFAULT_GRID_ROWS+'x'+DEFAULT_GRID_ROWS;
 function updateSliderValue(){
-    sliderValue.textContent = gridSizeSlider.value;
-    console.log(gridSizeSlider.value);
+    switch (Number(gridSizeSlider.value)){
+        case 1:
+            sliderValue.textContent = 'Grid Size = 10x10';
+            redrawGrid(10);
+            break;
+        case 2:
+            sliderValue.textContent = 'Grid Size = 15x15';
+            redrawGrid(15);
+            break;
+        case 3:
+            sliderValue.textContent = 'Grid Size = 20x20';
+            redrawGrid(20);
+            break;
+        case 4:
+            sliderValue.textContent = 'Grid Size = 30x30';
+            redrawGrid(30);
+            break;
+        case 5:
+            sliderValue.textContent = 'Grid Size = 50x50';
+            redrawGrid(50);
+            break;
+    }
 }
 gridSizeSlider.addEventListener('change', updateSliderValue);
 
