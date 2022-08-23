@@ -11,11 +11,12 @@ newDiv.classList.add('glow');
 container.appendChild(newDiv);
 container.style.cssText += 'grid-template-columns: repeat('+ DEFAULT_GRID_ROWS +',1fr);';
 }
-const pixels = document.querySelectorAll('.glow');
+
 function addPixelsEventListener(){
-for (i=0;i<pixels.length;i++){
-    pixels[i].addEventListener('mouseover', changeColor);
-    }
+    let pixels = document.querySelectorAll('.glow');
+    for (i=0;i<pixels.length;i++){
+        pixels[i].addEventListener('mouseover', changeColor);
+        }
     for (i=0;i<pixels.length;i++){
         pixels[i].addEventListener('mousedown', changeColorClick);
         }  
@@ -27,6 +28,16 @@ container.addEventListener('dragstart', (e) => {
 container.addEventListener('drop', (e) => {
   e.preventDefault()
 })
+function redrawGrid(newGridRows){
+    container.innerHTML = '';
+    for (i=0; i<newGridRows*newGridRows; i++){
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('glow');
+        container.appendChild(newDiv);
+        container.style.cssText += 'grid-template-columns: repeat('+ newGridRows +',1fr);';
+        }
+    addPixelsEventListener();
+}
 
 //Set a variable to watch mouse click position
 let mouseIsDown = false;
