@@ -12,6 +12,15 @@ container.appendChild(newDiv);
 container.style.cssText += 'grid-template-columns: repeat('+ DEFAULT_GRID_ROWS +',1fr);';
 }
 const pixels = document.querySelectorAll('.glow');
+function addPixelsEventListener(){
+for (i=0;i<pixels.length;i++){
+    pixels[i].addEventListener('mouseover', changeColor);
+    }
+    for (i=0;i<pixels.length;i++){
+        pixels[i].addEventListener('mousedown', changeColorClick);
+        }  
+}
+addPixelsEventListener();
 container.addEventListener('dragstart', (e) => {
   e.preventDefault()
 })
@@ -60,12 +69,7 @@ gridSizeSlider.addEventListener('change', updateSliderValue);
 
 
 //Coloring
-for (i=0;i<pixels.length;i++){
-    pixels[i].addEventListener('mouseover', changeColor);
-    }
-    for (i=0;i<pixels.length;i++){
-        pixels[i].addEventListener('mousedown', changeColorClick);
-        }    
+  
 function changeColor(e){
     if (mouseIsDown == true && colorChoice == 'random'){
         console.log(Math.floor(Math.random()*16777215).toString(16))
