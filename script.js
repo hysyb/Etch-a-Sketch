@@ -29,7 +29,7 @@ function toggleMouseStateDown(){
  }
 
 //Color Picker
-let radios = document.querySelectorAll('input[type="radio"]')
+let radios = document.querySelectorAll('input[type="radio"]');
 let colorPicker = document.getElementById('rgb');
 colorPicker.addEventListener('input', function(){
     colorChoice = colorPicker.value;
@@ -46,6 +46,16 @@ radios[i].onclick = function() {
     }
 }
 }
+//Range Slider
+let gridSizeSlider = document.getElementById('slider');
+let sliderValue = document.getElementById('sliderValue');
+sliderValue.textContent
+function updateSliderValue(){
+    sliderValue.textContent = gridSizeSlider.value;
+    console.log(gridSizeSlider.value);
+}
+gridSizeSlider.addEventListener('change', updateSliderValue);
+
 
 //Coloring
 for (i=0;i<pixels.length;i++){
